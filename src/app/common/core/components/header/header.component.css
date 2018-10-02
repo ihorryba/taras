@@ -1,0 +1,48 @@
+header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 80px;
+  background: rgb(119, 114, 114);
+  color: white;
+}
+
+.logo-ctnr {
+
+}
+
+.logo-ctnr .logo {
+  font-size: 40px;
+}
+
+.address-ctnr {
+  box-sizing: border-box;
+  padding-left: 15px;
+}
+
+.nav-ctnr {
+}
+.nav-ctnr .nav-item {
+  transition: .5s;
+  cursor: pointer;
+}
+.nav-ctnr .nav-item:hover {
+  color: #2c2d2a;
+}
+.menuBtn {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+}
+.menuBtn mat-icon {
+  font-size: 45px;
+  transition: .5s;
+}
+
+.menuBtn mat-icon:hover {
+  cursor: pointer;
+  font-size: 45px;
+  color: #2c2d2a;
+}
+

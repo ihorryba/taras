@@ -1,0 +1,41 @@
+.wrapper {
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 50px;
+  box-sizing: border-box;
+  padding-top: 80px;
+  background: #fff3cc;
+}
+
+footer {
+  position: relative;
+  background: rgb(119, 114, 114);
+  width: 100%;
+  height: 50px;
+  margin-top: -50px;
+}
+
+.nav-item {
+  margin-bottom: 25px;
+  transition: .5s;
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  color: #2c2d2a;
+}
+
+.sideMenu {
+  position: fixed;
+  height: calc(100% - 130px);
+  width: 0;
+  top: 80px;
+  right: 0px;
+  background: rgba(12, 12, 12, 0.4);
+  color: white;
+  transition: .5s;
+}
+
+.sideMenu.show {
+  width: 60%;
+}

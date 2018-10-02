@@ -1,0 +1,26 @@
+<header fxLayout="row">
+  <div fxFlex="150px" fxLayoutAlign="center center" class="logo-ctnr">
+    <span class="logo">LOGO</span>
+  </div>
+  <div fxFlex fxLayout="row" fxLayoutAlign="space-around center" class="nav-ctnr">
+    <div fxHide.lt-sm="true" fxFlex fxLayout="row" fxLayoutAlign="space-around center">
+      <!--div style="width: 50px; height: 50px; border-radius: 50%; background: #000;"></div>
+      <div style="width: 50px; height: 50px; border-radius: 50%; background: #000;"></div>
+      <div style="width: 50px; height: 50px; border-radius: 50%; background: #000;"></div>
+      <div style="width: 50px; height: 50px; border-radius: 50%; background: #000;"></div>
+      <div style="width: 50px; height: 50px; border-radius: 50%; background: #000;"></div-->
+      <span class="nav-item">Головна</span>
+      <span class="nav-item">Продукція</span>
+      <span class="nav-item">Контакти</span>
+      <span class="nav-item">Замовити</span>
+    </div>
+    <span fxHide.gt-xs="true" class="menuBtn">
+      <mat-icon (click)="showMenu()" style="font-size: 45px;">view_headline</mat-icon>
+    </span>
+  </div>
+  <div fxLayout="column" fxFlex="200px" fxLayoutAlign="center start" class="address-ctnr">
+    <span>м. Івано-Франківськ</span>
+    <span>вул. Симеренка 11/2</span>
+    <span>тел. 0977529037</span>
+  </div>
+</header>

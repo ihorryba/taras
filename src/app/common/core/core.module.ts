@@ -17,14 +17,15 @@ import { MatIconModule } from '@angular/material';
     ReactiveFormsModule,
     MatIconModule
   ],
-  declarations: [HeaderComponent],
+  declarations: [
+    HeaderComponent
+  ],
   exports: [
     BrowserAnimationsModule,
     FormsModule,
     FlexLayoutModule,
     ReactiveFormsModule,
     MatIconModule,
-
     HeaderComponent
   ]
 })

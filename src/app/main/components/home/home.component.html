@@ -1,0 +1,28 @@
+<div style="margin: 20px 0;">
+  <div class="main-ctn"
+       [class.small]="small"
+       fxLayout.gt-sm="row"
+       fxLayout.lt-sm="column"
+       fxLayoutAlign="space-between">
+    <div (click)="redirectTo()" class="img-main-ctn" fxFlex="19">
+      <div class="img-title">Гофровані</div>
+      <div class="img-ctn img-1"></div>
+    </div>
+    <div (click)="redirectTo()" class="img-main-ctn" [class.vertical]="small" fxFlex="19">
+      <div class="img-title">Двошарові</div>
+      <div class="img-ctn img-2"></div>
+    </div>
+    <div (click)="redirectTo()" class="img-main-ctn" fxFlex="19">
+      <div class="img-title">Прості</div>
+      <div class="img-ctn img-3"></div>
+    </div>
+    <div (click)="redirectTo()" class="img-main-ctn" [class.vertical]="small" fxFlex="19">
+      <div class="img-title">Складні</div>
+      <div class="img-ctn img-4"></div>
+    </div>
+    <div (click)="redirectTo()" class="img-main-ctn" fxFlex="19">
+      <div class="img-title">Не дуже прості</div>
+      <div class="img-ctn img-5"></div>
+    </div>
+  </div>
+</div>

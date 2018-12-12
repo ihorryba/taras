@@ -1,5 +1,5 @@
-<div fxLayout="row" fxLayoutAlign="center">
-  <div fxLayout="row" style="width: 80%; padding-top: 50px;">
+<div [formGroup]="form" fxLayout="row" fxLayoutAlign="center">
+  <div fxLayout="row" style="width: 80%; padding-top: 50px;" *ngIf="!small">
     <div fxFlex>
       <div fxLayout="row" fxLayoutAlign="center">
         <div class="image">
@@ -8,12 +8,14 @@
       </div>
       <div style="margin-top: 20px; padding: 20px; text-align: justify; text-indent: 50px;">
         <span>
-          Fgdfgdfgdfgdfg dfgdfdbvdf vfdvdf vdfbgfb gbgf bdgb gfbtybrd bdsfgdfgfd gdsfgfdgdfg dsfgds
-          dfgsdfg dsfgdsfgfdsg g dfg dsfg g dsfg fdsgdsfg sdfgdsfg dfs gdsf gsd gdsf gsdfgdfsg fdsgsdf
-          dgdsfg sdfgfdsgdf gfdsg sdfgdsfger htrh trh trbhtrhtrh trhtrhtr htr htr htrhtr htrs hsrth t
-          trhrhrthtrhrth trhrt hrthtr htrh rth rthtrhrt htrh rthtr htr htrhrth rthtr htr hrthtrhrt
-          gdfgdfsgsdfh ghgfhjdfjdfhj gjgfjhhrthytj ytjytj ytjtyjry rytjyhjrttrre hrthrtrrtrthrt rthtr
-          erhrt rthrer hhhhrtgfdghhr hrjrethdsfhrt hrthrthrthwthtrhrth  trhtrjhtr thtrh rthtrhtrh
+          Як передає кореспондент УНІАН, про це Помпео повідомив журналістам за
+          результатами зустрічі глав зовнішньополітичних відомств країн Альянсу та міністрів
+          закордонних справ України та Грузії у Брюсселі. Помпео заявив, що Росія продемонструвала
+          кричущу зневагу до положень Договору про ліквідацію ракет середньої та малої дальності.
+          Серед різних порушень, які Росія здійснювала впродовж багатьох років, держсекретар США,
+          зокрема, вказав на розробку і випробування з середини 2000-х років нової ракетної системи
+          РФ "Новатор 9М729", яка дозволяє запускати крилаті ракети на надмірні відстані, заборонені
+          договором.
         </span>
       </div>
     </div>
@@ -22,41 +24,78 @@
         Гофрований стакан
       </h1>
       <mat-form-field style="width: 80%;">
-        <mat-select placeholder="Об'єм">
-          <mat-option [value]="null">
-
-          </mat-option>
-          <mat-option [value]="'110'">
-            110
-          </mat-option>
-          <mat-option [value]="'175'">
-            175
-          </mat-option>
-          <mat-option [value]="'250'">
-            250
-          </mat-option>
-          <mat-option [value]="'300'">
-            300
+        <mat-select formControlName="size" placeholder="Об'єм">
+          <mat-option *ngFor="let size of sizes" [value]="size.price">
+            {{ size.size }}
           </mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field style="width: 80%;">
-        <mat-select placeholder="Фасування">
-          <mat-option [value]="null">
-
-          </mat-option>
-          <mat-option [value]="'ящик'">
-            Ящик
-          </mat-option>
-          <mat-option [value]="'рукав'">
-            Рукав
+        <mat-select formControlName="pack" placeholder="Фасування">
+          <mat-option *ngFor="let pack of packs" [value]="pack.number">
+            {{ pack.name }}
           </mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field style="width: 80%;">
-        <input matInput type="number" placeholder="Кількість" min="1">
+        <input matInput formControlName="number" type="text" mask="0*" placeholder="Кількість">
       </mat-form-field>
+      <div style="margin-bottom: 20px">
+        Коштуватиме: {{sum}}
+      </div>
       <button mat-stroked-button>Додати в корзину</button>
+    </div>
+  </div>
+
+  <div fxLayout="row" style="padding-top: 50px;" *ngIf="small">
+    <div fxFlex>
+      <div fxLayout="row" fxLayoutAlign="center">
+        <div class="image">
+          <div class="img-bg"></div>
+        </div>
+      </div>
+
+
+      <div style="text-align: center">
+        <h1>
+          Гофрований стакан
+        </h1>
+        <mat-form-field style="width: 80%;">
+          <mat-select formControlName="size" placeholder="Об'єм">
+            <mat-option *ngFor="let size of sizes" [value]="size.price">
+              {{ size.size }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field style="width: 80%;">
+          <mat-select formControlName="pack" placeholder="Фасування">
+            <mat-option *ngFor="let pack of packs" [value]="pack.number">
+              {{ pack.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field style="width: 80%;">
+          <input matInput formControlName="number" type="text" mask="0*" placeholder="Кількість">
+        </mat-form-field>
+        <div style="margin-bottom: 20px">
+          Коштуватиме: {{sum}}
+        </div>
+        <button mat-stroked-button>Додати в корзину</button>
+      </div>
+
+
+      <div style="margin-top: 20px; padding: 20px; text-align: justify; text-indent: 50px;">
+        <span>
+          Як передає кореспондент УНІАН, про це Помпео повідомив журналістам за
+          результатами зустрічі глав зовнішньополітичних відомств країн Альянсу та міністрів
+          закордонних справ України та Грузії у Брюсселі. Помпео заявив, що Росія продемонструвала
+          кричущу зневагу до положень Договору про ліквідацію ракет середньої та малої дальності.
+          Серед різних порушень, які Росія здійснювала впродовж багатьох років, держсекретар США,
+          зокрема, вказав на розробку і випробування з середини 2000-х років нової ракетної системи
+          РФ "Новатор 9М729", яка дозволяє запускати крилаті ракети на надмірні відстані, заборонені
+          договором.
+        </span>
+      </div>
     </div>
   </div>
 </div>
